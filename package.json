@@ -1,0 +1,32 @@
+{
+  "name": "websocket-chat",
+  "version": "1.0.0",
+  "description": "Simplistic chat with Websocket technology",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenSky1988/Websocket-Chat.git"
+  },
+  "keywords": [
+    "chat",
+    "node.js",
+    "websockets",
+    "express.js"
+  ],
+  "author": "Alexander Prisyazhnyy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OpenSky1988/Websocket-Chat/issues"
+  },
+  "homepage": "https://github.com/OpenSky1988/Websocket-Chat#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  }
+}
