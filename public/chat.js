@@ -16,12 +16,14 @@ function setName () {
     if (!name) {
         name = handle.value;
     }
-    nameDisplay.innerHTML = '<p>' + name + '<button class="message-form__change-name">Изменить</button></p>';
-    handle.style.display = "none";
+    nameDisplay.innerHTML = '<p>' + name + '<div class="message-form__change-name">Изменить</div></p>';
+    handle.style.display = 'none';
+    nameDisplay.classList.add('message-form__name-display_active');
     changeNameBtn = document.getElementsByClassName('message-form__change-name')[0];
 
     changeNameBtn.addEventListener('click', function () {
-        handle.style.display = "block";
+        handle.style.display = 'block';
+        nameDisplay.classList.remove('message-form__name-display_active');
         nameDisplay.innerHTML = '';
         name = '';
     });
@@ -31,14 +33,16 @@ function setName () {
 sendBtn.addEventListener('click', function () {
     if (handle.value && !message.value) {
         setName();
-        console.log('Enter message');    
+        message.classList.add('message-form__message_empty');  
     } else if (!handle.value && message.value) {
-        console.log('Enter name');
+        handle.classList.add('message-form__handle_empty');
     } else if (handle.value && message.value) {
         socket.emit('chat-message', {
             message: message.value,
             handle: handle.value
         });
+        handle.classList.remove('message-form__handle_empty');
+        message.classList.remove('message-form__message_empty');
         setName();
         message.value = '';
     } else {

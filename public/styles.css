@@ -8,6 +8,19 @@ h2 {
     color: #575ed8;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+label {
+    box-sizing: border-box;
+    display: block;
+    padding: 10px 20px;
+}
+
 .app {
     max-width: 600px;
     margin: 30px auto;
@@ -22,6 +35,12 @@ h2 {
     background: #f9f9f9;
 }
 
+.chat-window__feedback p {
+    color: #aaa;
+    padding: 14px 0px;
+    margin: 0 20px;
+}
+
 .chat-window__output p {
     padding: 14px 0px;
     margin: 0 20px;
@@ -29,19 +48,34 @@ h2 {
     color: #555;
 }
 
-.chat-window__feedback p {
-    color: #aaa;
-    padding: 14px 0px;
-    margin: 0 20px;
-}
-
 .chat-window__output strong {
     color: #575ed8;
 }
 
-label {
+.message-form__change-name {
+    color: #575ed8;
+}
+
+.message-form__change-name:hover,
+.message-form__change-name:active,
+.message-form__change-name:focus {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.message-form__name-display {
     box-sizing: border-box;
-    display: block;
+    background: rgb(229, 242, 255);
+    border: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    font-family: Nunito;
+    font-size: 16px;
+}
+
+.message-form__name-display_active {
     padding: 10px 20px;
 }
 
@@ -59,9 +93,16 @@ label {
     font-size: 16px;
 }
 
+.message-form__handle_empty,
+.message-form__message_empty {
+    background: rgb(240, 152, 152);
+    border-color: rgb(204, 34, 34);
+}
+
 .message-form__send {
     background: #575ed8;
     color: #fff;
+    cursor: pointer;
     font-size: 18px;
     border: 0;
     padding: 12px 0;
