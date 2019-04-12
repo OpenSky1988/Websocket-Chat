@@ -9,12 +9,15 @@
     <body>
         <div class="app">
             <div class="chat-window">
-                <div class="output"></div>
-                <div class="feedback"></div>
+                <div class="chat-window__output"></div>
+                <div class="chat-window__feedback"></div>
             </div>
-            <input class="handle" type="text" placeholder="Name" />
-            <input class="message" type="text" placeholder="Message" />
-            <button class="send">Send</button>
+            <div class="message-form">
+            <input class="message-form__handle" type="text" placeholder="Name" />
+            <div class="message-form__name-display"></div>
+            <input class="message-form__message" type="text" placeholder="Message" />
+            <button class="message-form__send">Send</button>
+            </div>
         </div>
         <script src="/chat.js"></script>
     </body>
